@@ -10,3 +10,75 @@ footer{min-height:320px;padding:70px clamp(28px,8vw,130px) 40px;display:grid;gri
 @media(max-width:520px){nav{display:none}.buttons{flex-direction:column}.buttons a{width:100%}.lesson-list article{grid-template-columns:42px 1fr}.choices{grid-template-columns:1fr}.choices article{border-right:0;border-bottom:1px solid #babdb4}.choices article:last-child{border-bottom:0}.continue dl div{grid-template-columns:76px 1fr}.continue dd small{display:block;margin-top:5px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.buttons a{transition:none}}
 
+/* Premium finish — preserve the established Spring design and refine its detail. */
+html{scroll-padding-top:88px}
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+header{transition:background-color .3s ease}
+header:after{content:"";position:absolute;left:clamp(24px,5vw,76px);right:clamp(24px,5vw,76px);bottom:0;height:1px;background:linear-gradient(90deg,transparent,#314a3a22 18%,#314a3a22 82%,transparent)}
+nav a{position:relative;border:0}
+nav a:after{content:"";position:absolute;left:0;right:100%;bottom:2px;height:1px;background:var(--green);transition:right .25s ease}
+nav a:hover:after{right:0}
+.hero{position:relative;background:radial-gradient(circle at 84% 24%,#efdfb8 0 7%,transparent 30%),linear-gradient(112deg,#f8f5ec 0 62%,#f5f0e2 100%)}
+.hero:before{content:"";position:absolute;left:0;bottom:0;width:34%;height:1px;background:#2f6d4e55}
+.hero>div:first-child{position:relative;z-index:1}
+.hero .eyebrow{display:flex;align-items:center;gap:16px}
+.hero .eyebrow:before{content:"";width:34px;height:1px;background:var(--green)}
+.hero h1{text-wrap:balance;letter-spacing:.025em}
+.buttons a{position:relative;overflow:hidden;letter-spacing:.045em}
+.buttons a:after{content:"→";display:inline-block;margin-left:14px;transition:transform .2s ease}
+.buttons a:hover:after{transform:translateX(4px)}
+.hero-art:before{content:"";position:absolute;inset:-15px 18px 18px -15px;border:1px solid #907e563d;border-radius:48% 48% 8px 8px;z-index:-1}
+.hero-art img{transition:filter .45s ease,transform .6s ease}
+.hero-art:hover img{filter:saturate(.95);transform:scale(1.012)}
+.hero-art:after{content:"ENGLISH  ×  SAORI";position:absolute;left:-34px;bottom:34px;padding:12px 18px;background:#fffdf8e8;border:1px solid #d8d1c1;color:#496052;font:600 10px Arial,sans-serif;letter-spacing:.2em;backdrop-filter:blur(8px)}
+.threads{position:relative;z-index:2;box-shadow:0 7px 20px #1f3e2820}
+.section{position:relative}
+.label{letter-spacing:.23em}
+.label:after{content:"";height:1px;flex:1;max-width:110px;background:currentColor;opacity:.28}
+.about{background:linear-gradient(180deg,#fffdf8,#fbf8f0)}
+.about-text p:first-child:first-letter{float:left;margin:.08em .15em 0 0;color:var(--green);font-size:3.2em;line-height:.78}
+.english{background:linear-gradient(135deg,#173d2d 0,#1c4634 54%,#17392b 100%);overflow:hidden}
+.english:before{content:"";position:absolute;right:-150px;top:70px;width:430px;height:430px;border:1px solid #ffffff14;border-radius:50%;box-shadow:0 0 0 70px #ffffff08,0 0 0 140px #ffffff05}
+.english>*{position:relative;z-index:1}
+.lesson-list article{transition:background-color .25s ease,padding-inline .25s ease}
+.lesson-list article:hover{padding-inline:18px;background:#ffffff08}
+.lesson-list h3{letter-spacing:.025em}
+.fees{border-radius:3px;box-shadow:0 22px 55px #071f1430}
+.saori{background:linear-gradient(180deg,#fbf8f0 0,#fffdf8 100%)}
+.saori-intro img{box-shadow:20px 22px 0 #e7dbc1,0 30px 65px #5b49321c;transition:filter .35s ease}
+.saori-intro img:hover{filter:saturate(1.05)}
+.choice-title .eyebrow{display:flex;align-items:center;justify-content:center;gap:16px}
+.choice-title .eyebrow:before,.choice-title .eyebrow:after{content:"";width:40px;height:1px;background:#2f6d4e55}
+.choices article{position:relative;transition:background-color .25s ease,transform .25s ease}
+.choices article:after{content:"";position:absolute;left:24px;right:24px;bottom:0;height:3px;transform:scaleX(0);transform-origin:left;background:linear-gradient(90deg,#e8b73d,#2f8a56,#dc6b55,#3e7391);transition:transform .25s ease}
+.choices article:hover{background:#fff;transform:translateY(-5px)}
+.choices article:hover:after{transform:scaleX(1)}
+.continue{border-left:4px solid var(--gold);box-shadow:0 20px 55px #6d58351a}
+footer{position:relative;background:linear-gradient(115deg,#e7e1d2,#eee9dd)}
+footer:before{content:"";position:absolute;inset:0 auto 0 0;width:5px;background:linear-gradient(#e8b73d 20%,#2f8a56 20% 40%,#dc6b55 40% 60%,#3e7391 60% 80%,#dd433c 80%)}
+
+@keyframes spring-enter{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.hero>div:first-child{animation:spring-enter .75s ease-out both}
+.hero-art{animation:spring-enter .85s .1s ease-out both}
+
+@media(max-width:900px){
+  header:after{left:20px;right:20px}
+  .hero-art:after{left:-18px;bottom:25px}
+  .english:before{width:300px;height:300px;right:-190px}
+  .lesson-list article:hover{padding-inline:10px}
+}
+@media(max-width:520px){
+  html{scroll-padding-top:70px}
+  header:after{display:none}
+  .hero .eyebrow:before{width:22px}
+  .hero-art:before{inset:-9px 10px 10px -9px}
+  .hero-art:after{left:-12px;bottom:20px;padding:10px 12px;font-size:8px;letter-spacing:.14em}
+  .buttons a{display:flex;align-items:center;justify-content:center}
+  .about-text p:first-child:first-letter{font-size:2.7em}
+  .lesson-list article:hover{padding-inline:0;background:transparent}
+  .fees{margin-inline:-6px}
+  .saori-intro img{box-shadow:10px 12px 0 #e7dbc1,0 20px 45px #5b493218}
+  .choices article:hover{transform:none}
+  .continue{border-left-width:3px}
+}
+@media(prefers-reduced-motion:reduce){.hero>div:first-child,.hero-art{animation:none}.hero-art img,.lesson-list article,.choices article{transition:none}}
