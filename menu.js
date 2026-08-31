@@ -1,0 +1,7 @@
+document.addEventListener("DOMContentLoaded",()=>{
+  const links=[["HOME","./index.html"],["ABOUT US","./about.html"],["ENGLISH","./english.html"],["SAORI WEAVING","./saori.html"]];
+  document.body.insertAdjacentHTML("afterbegin",`<header class="global-header"><a class="logo" href="./index.html"><img src="./spring-logo.png" alt="株式会社スプリング"></a><button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false"><i></i><i></i><span>MENU</span></button></header><div class="drawer-shell" aria-hidden="true"><button class="drawer-backdrop" aria-label="メニューを閉じる"></button><aside class="drawer"><button class="drawer-close" aria-label="メニューを閉じる">×</button><img class="drawer-logo" src="./spring-logo.png" alt="株式会社スプリング"><p class="drawer-tag">LEARN · CREATE · BLOOM</p><nav>${links.map(([label,href],i)=>`<a href="${href}"><small>0${i+1}</small><b>${label}</b><span>→</span></a>`).join("")}</nav><p class="drawer-foot">英語と、さをり織り。<br>新しい可能性が芽吹く場所。</p></aside></div>`);
+  const shell=document.querySelector(".drawer-shell"),toggle=document.querySelector(".menu-toggle");
+  const setOpen=open=>{shell.classList.toggle("is-open",open);shell.setAttribute("aria-hidden",String(!open));toggle.setAttribute("aria-expanded",String(open));document.body.style.overflow=open?"hidden":""};
+  toggle.addEventListener("click",()=>setOpen(true));document.querySelector(".drawer-close").addEventListener("click",()=>setOpen(false));document.querySelector(".drawer-backdrop").addEventListener("click",()=>setOpen(false));addEventListener("keydown",e=>{if(e.key==="Escape")setOpen(false)});
+});
